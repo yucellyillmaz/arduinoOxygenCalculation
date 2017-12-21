@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="gzsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="gzsModelStoreContainer">
+          <EntitySet Name="calculation" EntityType="gzsModel.Store.calculation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="log" EntityType="gzsModel.Store.log" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="user" EntityType="gzsModel.Store.user" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="calculation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="log_id" Type="int" />
+          <Property Name="width" Type="float" />
+          <Property Name="length" Type="float" />
+          <Property Name="height" Type="float" />
+          <Property Name="remaining_time" Type="int" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="humidity" Type="float" />
+          <Property Name="temperature" Type="float" />
+          <Property Name="gas" Type="float" />
+          <Property Name="oxygen" Type="float" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="gzsModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="gzsEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="calculations" EntityType="gzsModel.calculation" />
+          <EntitySet Name="logs" EntityType="gzsModel.log" />
+          <EntitySet Name="users" EntityType="gzsModel.user" />
+        </EntityContainer>
+        <EntityType Name="calculation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="user_id" />
+          <Property Type="Int32" Name="log_id" />
+          <Property Type="Double" Name="width" />
+          <Property Type="Double" Name="length" />
+          <Property Type="Double" Name="height" />
+          <Property Type="Int32" Name="remaining_time" />
+          <Property Type="DateTime" Name="date" Precision="3" />
+        </EntityType>
+        <EntityType Name="log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Double" Name="humidity" />
+          <Property Type="Double" Name="temperature" />
+          <Property Type="Double" Name="gas" />
+          <Property Type="Double" Name="oxygen" />
+          <Property Type="Int32" Name="user_id" />
+          <Property Type="DateTime" Name="date" Precision="3" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="username" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="password" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="gzsModelStoreContainer" CdmEntityContainer="gzsEntities">
+          <EntitySetMapping Name="calculations">
+            <EntityTypeMapping TypeName="gzsModel.calculation">
+              <MappingFragment StoreEntitySet="calculation">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="remaining_time" ColumnName="remaining_time" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="length" ColumnName="length" />
+                <ScalarProperty Name="width" ColumnName="width" />
+                <ScalarProperty Name="log_id" ColumnName="log_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="logs">
+            <EntityTypeMapping TypeName="gzsModel.log">
+              <MappingFragment StoreEntitySet="log">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="oxygen" ColumnName="oxygen" />
+                <ScalarProperty Name="gas" ColumnName="gas" />
+                <ScalarProperty Name="temperature" ColumnName="temperature" />
+                <ScalarProperty Name="humidity" ColumnName="humidity" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="gzsModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
