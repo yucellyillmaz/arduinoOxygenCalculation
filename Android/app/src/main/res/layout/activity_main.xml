@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hakanyucel.gercekzamanliproje.MainActivity"
+    android:background="@color/colorNavy">
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="211dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnRegister"
+        android:layout_alignLeft="@+id/btnRegister"
+        android:layout_alignStart="@+id/btnRegister"
+        android:layout_marginBottom="29dp"
+        android:text="Giriş Yap"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="272dp" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="211dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edtPassword"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/edtPassword"
+        android:layout_marginBottom="91dp"
+        android:text="Kayıt Ol"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="334dp" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="211dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/edtPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="56dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="84dp"
+        android:textColor="@color/colorLightBlue"
+        android:textColorHint="@color/colorLightBlue"
+        android:textColorHighlight="@color/colorLightBlue"
+        android:shadowColor="@color/colorLightBlue"
+        android:textColorLink="@color/colorLightBlue" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="211dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edtEmail"
+        android:layout_alignStart="@+id/edtEmail"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="Parola"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="161dp"
+        android:textColor="@color/colorLightBlue"
+        android:textColorHint="@color/colorLightBlue"
+        android:textColorHighlight="@color/colorLightBlue"
+        android:shadowColor="@color/colorLightBlue"
+        android:textColorLink="@color/colorLightBlue"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_above="@+id/edtEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="Kullanıcı Giriş Ekranı"
+        android:textAlignment="center"
+        android:textColor="@color/colorLightBlue"
+        android:textSize="50px" />
+</RelativeLayout>
