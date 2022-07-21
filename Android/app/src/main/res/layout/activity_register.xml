@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yucellyillmaz.proje.RegisterActivity"
+    android:background="@color/colorNavy">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:text="Kullanıcı Kayıt Formu"
+        android:textAlignment="center"
+        android:textColor="@color/colorLightBlue"
+        android:textSize="50px" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edtPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:shadowColor="@color/colorLightBlue"
+        android:textColor="@color/colorLightBlue"
+        android:textColorHighlight="@color/colorLightBlue"
+        android:textColorHint="@color/colorLightBlue"
+        android:textColorLink="@color/colorLightBlue"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnRegister"
+        android:layout_alignLeft="@+id/edtEmail"
+        android:layout_alignStart="@+id/edtEmail"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="Parola"
+        android:inputType="textPassword"
+        android:shadowColor="@color/colorLightBlue"
+        android:textColor="@color/colorLightBlue"
+        android:textColorHighlight="@color/colorLightBlue"
+        android:textColorHint="@color/colorLightBlue"
+        android:textColorLink="@color/colorLightBlue"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="247dp" />
+
+    <EditText
+        android:id="@+id/edtAdSoyad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edtEmail"
+        android:layout_alignLeft="@+id/edtEmail"
+        android:layout_alignStart="@+id/edtEmail"
+        android:layout_marginBottom="13dp"
+        android:ems="10"
+        android:hint="Ad"
+        android:inputType="textPersonName"
+        android:shadowColor="@color/colorLightBlue"
+        android:text="Ad Soyad"
+        android:textColor="@color/colorLightBlue"
+        android:textColorHighlight="@color/colorLightBlue"
+        android:textColorHint="@color/colorLightBlue"
+        android:textColorLink="@color/colorLightBlue"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="211dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="75dp"
+        android:text="Geri Dön"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="398dp" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="211dp"
+        android:layout_height="48dp"
+        android:layout_above="@+id/btnBack"
+        android:layout_alignLeft="@+id/edtPassword"
+        android:layout_alignStart="@+id/edtPassword"
+        android:text="Kayıt Ol"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="321dp" />
+
+</RelativeLayout>
